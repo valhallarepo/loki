@@ -1,0 +1,73 @@
+<form [formGroup]="form" (ngSubmit)="pesquisar()" fxLayout="row wrap" fxLayoutAlign="start center">
+    
+    <div class="mr-3">
+        <mat-form-field appearance="outline" hidden>
+            <mat-label>{{ 'PAGES.SEARCH_MOVIE.FILTER.ID' | translate }}</mat-label>
+            <input matInput formControlName="id">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>{{ 'PAGES.SEARCH_MOVIE.FILTER.QUERY' | translate }}</mat-label>
+            <input matInput #query formControlName="query" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" hidden>
+            <mat-label>{{ 'PAGES.SEARCH_MOVIE.FILTER.YEAR' | translate }}</mat-label>
+            <input matInput formControlName="year" maxlength="4">
+        </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <button mat-raised-button color="primary" type="submit" class="mr-2">
+            {{ 'GLOBAL.BUTTONS.SEARCH' | translate }} <mat-icon>search</mat-icon>
+        </button>
+        <button mat-raised-button color="accent" type="reset" (click)="limpar()">
+            {{ 'GLOBAL.BUTTONS.CLEAR' | translate }} <mat-icon>clear</mat-icon>
+        </button>
+    </div>
+</form>
+
+<div class="mat-elevation-z8 mt-3">
+    <mat-paginator [pageSize]="20" (page)="pesquisar($event)" showFirstLastButtons></mat-paginator>
+
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="id">
+            <mat-header-cell mat-header-cell *matHeaderCellDef>{{ 'PAGES.SEARCH_MOVIE.TABLE.COLUMNS.ID' | translate }}
+            </mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="originalTitle">
+            <mat-header-cell mat-header-cell *matHeaderCellDef>
+                {{ 'PAGES.SEARCH_MOVIE.TABLE.COLUMNS.ORIGINAL_TITLE' | translate }}</mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let element">{{ element.originalTitle }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+            <mat-header-cell mat-header-cell *matHeaderCellDef>
+                {{ 'PAGES.SEARCH_MOVIE.TABLE.COLUMNS.TITLE' | translate }}</mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let element">{{ element.title }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="popularity">
+            <mat-header-cell mat-header-cell *matHeaderCellDef>
+                {{ 'PAGES.SEARCH_MOVIE.TABLE.COLUMNS.POPULARITY' | translate }}</mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let element">{{ element.popularity }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="voteCount">
+            <mat-header-cell mat-header-cell *matHeaderCellDef>
+                {{ 'PAGES.SEARCH_MOVIE.TABLE.COLUMNS.VOTE_COUNT' | translate }}</mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let element">{{ element.voteCount }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="voteAverage">
+            <mat-header-cell mat-header-cell *matHeaderCellDef>
+                {{ 'PAGES.SEARCH_MOVIE.TABLE.COLUMNS.VOTE_AVERAGE' | translate }}</mat-header-cell>
+            <mat-cell mat-cell *matCellDef="let element">{{ element.voteAverage }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

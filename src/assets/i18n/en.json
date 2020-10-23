@@ -1,0 +1,41 @@
+{
+  "PAGES": {
+    "HOME": {
+      "TITLE": "Página Inicial"
+    },
+    "SEARCH_MOVIE": {
+      "TITLE": "Pesquisar Filme",
+      "FILTER": {
+        "ID": "Id do Filme",
+        "QUERY": "Termo de Busca",
+        "YEAR": "Ano de Lançamento"
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "ID": "Id do Usuário",
+          "ORIGINAL_TITLE": "Título Original",
+          "ORIGINAL_LANGUAGE": "Idioma Original",
+          "TITLE": "Nome do Filme",
+          "POPULARITY": "Popularidade",
+          "VOTE_COUNT": "Quantidade de Votos",
+          "VOTE_AVERAGE": "Nota Média"
+        }
+      }
+    }
+  },
+  "GLOBAL": {
+    "BUTTONS": {
+      "SAVE": "Gravar",
+      "UPDATE": "Atualizar",
+      "SEARCH": "Pesquisar",
+      "CANCEL": "Cancelar",
+      "CLEAR": "Limpar",
+      "DOWNLOAD": "Baixar",
+      "BACK": "Voltar",
+      "NEXT": "Avançar"
+    },
+    "MSG": {
+      "REQUIRED": "Campo obrigatório não preenchido."
+    }
+  }
+}
