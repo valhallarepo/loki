@@ -2,7 +2,7 @@ export class PaginatedResponse<M> {
 
     page: number;
     results: Array<M>;
-    totalPages: number;
-    totalResults: number;
+    total_pages: number;
+    total_results: number;
 
 }

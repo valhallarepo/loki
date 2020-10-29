@@ -54,7 +54,7 @@ export class SearchMoviesComponent implements OnInit {
 
     this.searchMovieService.get(null, params).subscribe(
       res => {
-        this.paginator.length = res.totalResults;
+        this.paginator.length = res.total_results;
         this.dataSource.data = res.results;
       }
     );

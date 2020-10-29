@@ -3,7 +3,7 @@ export class SearchMovieRequest {
     id: number | string;
     page: number;
     query: string;
-    includeAdult = false;
+    include_adult = false;
     year: number;
 
 }

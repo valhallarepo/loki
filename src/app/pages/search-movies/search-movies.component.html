@@ -37,10 +37,10 @@
             <mat-cell mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="originalTitle">
+        <ng-container matColumnDef="original_title">
             <mat-header-cell mat-header-cell *matHeaderCellDef>
                 {{ 'PAGES.SEARCH_MOVIE.TABLE.COLUMNS.ORIGINAL_TITLE' | translate }}</mat-header-cell>
-            <mat-cell mat-cell *matCellDef="let element">{{ element.originalTitle }}</mat-cell>
+            <mat-cell mat-cell *matCellDef="let element">{{ element.original_title }}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="title">
@@ -55,16 +55,16 @@
             <mat-cell mat-cell *matCellDef="let element">{{ element.popularity }}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="voteCount">
+        <ng-container matColumnDef="vote_count">
             <mat-header-cell mat-header-cell *matHeaderCellDef>
                 {{ 'PAGES.SEARCH_MOVIE.TABLE.COLUMNS.VOTE_COUNT' | translate }}</mat-header-cell>
-            <mat-cell mat-cell *matCellDef="let element">{{ element.voteCount }}</mat-cell>
+            <mat-cell mat-cell *matCellDef="let element">{{ element.vote_count }}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="voteAverage">
+        <ng-container matColumnDef="vote_average">
             <mat-header-cell mat-header-cell *matHeaderCellDef>
                 {{ 'PAGES.SEARCH_MOVIE.TABLE.COLUMNS.VOTE_AVERAGE' | translate }}</mat-header-cell>
-            <mat-cell mat-cell *matCellDef="let element">{{ element.voteAverage }}</mat-cell>
+            <mat-cell mat-cell *matCellDef="let element">{{ element.vote_average }}</mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
